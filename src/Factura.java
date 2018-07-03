@@ -18,7 +18,9 @@ public class Factura
     public Factura (String cliente)
     {
         this.cliente = cliente;
+
         this.lista = new Detalle[100];
+        this.numDetalles = 0;
     }
 
     public void agregarDetalle (Detalle l)
