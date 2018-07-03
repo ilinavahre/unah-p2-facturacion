@@ -4,47 +4,47 @@
  * and open the template in the editor.
  */
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Delia
  */
 public class Factura
 {
-    String cliente;
-    ArrayList<Detalle> lista;
+    public String cliente;
+
+    public Detalle[] lista;
+    public int numDetalles;
 
     public Factura (String cliente)
     {
         this.cliente = cliente;
-        this.lista = new ArrayList<Detalle> ();
+        this.lista = new Detalle[100];
     }
 
     public void agregarDetalle (Detalle l)
     {
-        this.lista.add(l);
+        this.lista[this.numDetalles] = l;
+        this.numDetalles++;
     }
 
     public float subTotal ()
     {
         float valor = 0;
         
-        for (int i = 0; i < lista.size(); i++)
+        for (int i = 0; i < numDetalles; i++)
         {
-            valor += lista.get(i).subTotal();
+            valor += lista[i].subTotal();
         }
 
         return valor;
     }
-
-    public float impuesto ()
+    public float impuesto () 
     {
         float valor = 0;
         
-        for (int i = 0; i < lista.size(); i++)
+        for (int i = 0; i < numDetalles; i++)
         {
-            valor += lista.get(i).impuesto();
+            valor += lista[i].impuesto();
         }
         
         return valor;

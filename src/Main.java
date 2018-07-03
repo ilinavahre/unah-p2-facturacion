@@ -32,7 +32,8 @@ public class Main
 
         out.print("Nombre de Cliente: ");
         String nombreCliente = in.next();
-        Factura f = new Factura(nombreCliente);
+        
+        Factura f = new Factura (nombreCliente);
 
         out.println("\n-------------------------");
         out.println(">>> Ingrese los detalles de la factura, use cantidad=0 para terminar <<\n");
@@ -63,9 +64,9 @@ public class Main
         // 14, 18, 14
         out.println("----------------------------------------------------------");
 
-        for (int i = 0; i < f.lista.size(); i++)
+        for (int i = 0; i < f.numDetalles; i++)
         {
-            Detalle d = f.lista.get(i);
+            Detalle d = f.lista[i];
             out.print(padRight(d.cantidad+"", 14));
             out.print(padRight(d.descripcion, 18));
             out.print(padRight("L. "+d.precio, 14));
