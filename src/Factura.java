@@ -23,10 +23,15 @@ public class Factura
         this.numDetalles = 0;
     }
 
-    public void agregarDetalle (Detalle l)
+    public Boolean agregarDetalle (Detalle l)
     {
+        if(numDetalles >= 100)
+            return false;
+
         this.lista[this.numDetalles] = l;
         this.numDetalles++;
+
+        return true;
     }
 
     public float subTotal ()

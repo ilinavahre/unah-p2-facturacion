@@ -10,20 +10,18 @@
  */
 public class Detalle
 {
-    String descripcion;
-    float precio;
+    Articulo articulo;
     float cantidad;
 
-    public Detalle(String desc, float precio, float cantidad)
+    public Detalle(float cantidad, Articulo a)
     {
-        this.descripcion = desc;
-        this.precio = precio;
         this.cantidad = cantidad;
+        this.articulo = a;
     }
 
     public float subTotal()
     {
-        return precio*cantidad;
+        return articulo.Precio*cantidad;
     }
 
     public float impuesto()
